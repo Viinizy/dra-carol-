@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-nude: #F5F2ED;
+  --color-rose-gold: #E7C6B5;
+  --color-gold: #C5A059;
+  --color-ink: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-4 bg-ink text-white rounded-full font-medium transition-all hover:bg-ink/90 hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 border border-ink text-ink rounded-full font-medium transition-all hover:bg-ink hover:text-white hover:scale-105 active:scale-95;
+  }
+  
+  .section-padding {
+    @apply py-24 px-6 md:px-12 lg:px-24;
+  }
+  
+  .editorial-title {
+    @apply text-4xl md:text-6xl lg:text-7xl leading-[1.1] font-medium;
+  }
+  
+  .editorial-subtitle {
+    @apply text-lg md:text-xl text-ink/70 font-light leading-relaxed;
+  }
+}
+
+/* Custom animations or utilities */
+.glass-nav {
+  @apply bg-white/80 backdrop-blur-md border-b border-ink/5;
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-gold via-rose-gold to-gold;
+}
